@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: Auth
+  datasource:
+    hikari:
+      auto-commit: true
+      idle-timeout: 10000
+      max-lifetime: 5
+      connection-test-query: SELECT 1 FROM DUAL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:  jdbc:mysql://localhost:3306/youyi?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: qq12345678
+  redis:
+    port: 6379
+    host: 127.0.0.1
+    database: 1
+    timeout: 10s
+    lettuce:
+      pool:
+        max-active: 200
+        min-idle: 0
+server:
+  port: 7203
+eureka:
+  instance:
+    instance-id: Auth
+    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 3
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+logging:
+  level:
+    sql: debug
+    org.HdrHistogram: debug
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

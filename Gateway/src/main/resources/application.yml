@@ -2,7 +2,7 @@ server:
   port: 7201
 spring:
   application:
-    name: CLOUD-GATEWAY
+    name: Gateway
   cloud:
     gateway:
       discovery:
@@ -32,7 +32,7 @@ management:
         include: '*'
 eureka:
   instance:
-    instance-id: CLOUD-GATEWAY
+    instance-id: Gateway
     lease-expiration-duration-in-seconds: 5
     lease-renewal-interval-in-seconds: 3
   client:

@@ -1,0 +1,32 @@
+server:
+  port: 7201
+spring:
+  application:
+    name: CLOUD-GATEWAY
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+    org.springframework.http.server.reactive: debug
+    org.springframework.web.reactive: debug
+    reactor.netty: debug
+# actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+eureka:
+  instance:
+    instance-id: CLOUD-GATEWAY
+    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 3
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka

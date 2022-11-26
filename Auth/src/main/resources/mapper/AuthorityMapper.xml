@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.auth.mapper.AuthorityMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.auth.domain.Authority">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="describe" column="describe" jdbcType="CHAR"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,describe,status
+    </sql>
+</mapper>

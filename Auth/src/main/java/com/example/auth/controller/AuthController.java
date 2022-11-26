@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class AuthController {
 
-
     @GetMapping("doLogin")
     public SaResult Login() {
         return SaResult.ok("登录功能");
